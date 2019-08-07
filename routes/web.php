@@ -15,11 +15,16 @@
 //     return view('welcome');
 // });
 
-Auth::routes();
+//Auth::routes();
+
+// Authentication Routes...
+Route::get('login', 'Auth\LoginController@showLoginForm')->name('login');
+Route::post('login', 'Auth\LoginController@login');
+Route::post('logout', 'Auth\LoginController@logout')->name('logout');
+
 
 Route::get('/', 'HomeController@index')->name('home');
 Route::get('/home', 'HomeController@index')->name('home');
-
 
 
 Route::get('/snippet/index', 'SnippetController@index')->where('id', '[0-9]+')->name('snippet.index');
