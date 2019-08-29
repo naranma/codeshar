@@ -24,7 +24,7 @@ Route::post('logout', 'Auth\LoginController@logout')->name('logout');
 
 
 Route::get('/', 'HomeController@index')->name('home');
-Route::get('/home', 'HomeController@index')->name('home');
+//Route::get('/home', 'HomeController@index')->name('home');
 
 Route::middleware('auth')->group(function () {
     Route::get('/snippet/index', 'SnippetController@index')->where('id', '[0-9]+')->name('snippet.index');
